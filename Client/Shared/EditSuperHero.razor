@@ -1,0 +1,17 @@
+﻿<h3>EditSuperHero</h3>
+
+<EditForm Model="Hero" OnSubmit="HandleSubmit">
+    <InputText @bind-Value="Hero.FirstName" />
+    <InputText @bind-Value="Hero.LastName" />
+    <InputText @bind-Value="Hero.HeroName" />
+</EditForm>
+
+@code {
+    public SuperHeroDatabase.Shared.SuperHero Hero { get; set; } = new SuperHeroDatabase.Shared.SuperHero();
+
+    void HandleSubmit()
+    {
+        Console.WriteLine("Submit was called!");
+        Console.WriteLine(Hero.FirstName);
+    }
+}
